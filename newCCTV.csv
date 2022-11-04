@@ -3079,7 +3079,7 @@ dbId,domainId,eqId,freewayId,latitude,locationId,longitude,mainDirection,url
 3030657,C,CCTV-N1-N-194.721-M,10010,24.094233,,120.536449,2,http://cctvc.freeway.gov.tw/abs2mjpg/bmjpg?camera=223
 4030735,S,CCTV-T88-W-13.960-M,20880,22.581745,,120.4681384,4,https://cctvs.freeway.gov.tw/live-view/mjpg/video.cgi?camera=3041
 1030961,N,CCTV-N1-S-9.075-M-汐止地磅站-指示牌,10010,25.0806115028199,,121.666552879774,1,https://cctvn.freeway.gov.tw/abs2mjpg/bmjpg?camera=10907
-1030962,N,CCTV-N1-N-70.220-M,10010,24.9020188319313,,121.157659820623,2,https://cctvn.freeway.gov.tw/abs2mjpg/bmjpg?camera=10907
+1030962,N,CCTV-N1-N-70.220-M,10010,24.9020188319313,,121.157659820623,2,https://cctvn.freeway.gov.tw/abs2mjpg/bmjpg?camera=17027
 1030963,N,CCTV-N1H-S-70.500-M-2,10019,24.9014343354432,,121.154533208497,1,https://cctvn.freeway.gov.tw/abs2mjpg/bmjpg?camera=17051
 3030709,C,CCTV-T76-W-27.390-M-八卦山隧道,20760,23.942045,,120.605827,4,https://cctvc.freeway.gov.tw/abs2mjpg/bmjpg?camera=148
 3030710,C,CCTV-T76-W-28.240-M-八卦山隧道,20760,23.942705,,120.614151,4,https://cctvc.freeway.gov.tw/abs2mjpg/bmjpg?camera=144
