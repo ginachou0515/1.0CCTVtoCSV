@@ -1,5 +1,5 @@
 """
-!/usr/bin/env python
+!/usr/bin/env python 3.9
 -*- coding: utf-8 -*-
 @File  : CCTVtrans.py
 @Author: GinaChou
@@ -61,23 +61,29 @@ if __name__ == '__main__':
             "updatetime": "2022/11/04 12:00:00",
             "interval": "86400"})
 
+
     Infos = ET.SubElement(root, 'Infos')
-    a = "CCTV-test"
-    longitude = "121"
-    latitude = "22"
-    Infos = ET.SubElement(
-        Infos, "Info", {
-            "cctvid": a,
-            "roadsection": "",
-            "locationpath": "",
-            "startlocationpoint": "",
-            "endlocationpoint": "",
-            "px": longitude,
-            "py": latitude})
+     ##
+    for i in range(0, 3):
+        longitude = 22 + i
+        latitude = 121 + i
+        Info = ET.Element(
+            'Info', {
+                "cctvid": str(i),
+                "roadsection": "",
+                "locationpath": "",
+                "startlocationpoint": "",
+                "endlocationpoint": "",
+                "px": str(longitude),
+                "py": str(latitude)})
+        Infos.append(Info)
 
     tree = ET.ElementTree(root)
     print(f"tree{tree}")
     tree.write(os.path.join(os.path.dirname(__file__), "test1.1.xml"))
+
+
+
 
     # # 將根目錄轉化為樹行結構
     # tree = ET.ElementTree(root)
