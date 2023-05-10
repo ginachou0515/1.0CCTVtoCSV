@@ -68,7 +68,8 @@ if __name__ == '__main__':
 
     tree = ET.ElementTree(root)
 
-    tree.write(os.path.join(os.path.dirname(__file__), "newCCTVto1.1.xml"))
+    tree.write(os.path.join(os.path.dirname(__file__), "cctv_info_0000.xml"))
+    print(f'{info["@time"]}=>\n輸出更新CCTV檔：cctv_info_0000.xml')
 
 
 """JAVA設定的屬性如下：
