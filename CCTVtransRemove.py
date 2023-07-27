@@ -44,14 +44,14 @@ if __name__ == '__main__':
 
     Infos = ET.SubElement(root, 'Infos')
 
-    for stop in stops:
+    for stop in stops:##0526修改為以包含標頭設備判斷
         if "0" in stop["@enabled"]: #移除不發表於1968的設備
             print(f'不發表於1968：{stop["@eqId"]}')
             continue
-        if "T62" in stop["@eqId"]:#移除公總管理的設備
+        if "CCTV-T62" in stop["@eqId"]:#移除公總管理的設備
             print(f'不含台62：{stop["@eqId"]}')
             continue
-        if "T64" in stop["@eqId"]:#移除公總管理的設備
+        if "CCTV-T64" in stop["@eqId"]:#移除公總管理的設備
             print(f'不含台64：{stop["@eqId"]}')
             continue
         Info = ET.Element(
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     tree = ET.ElementTree(root)
 
     tree.write(os.path.join(os.path.dirname(__file__), "cctv_info_0000.xml"))
-    print(f'{info["@time"]}=>\n輸出更新CCTV檔：cctv_info_0000.xml')
+    print(f'{info["@time"]}\n輸出更新CCTV檔：cctv_info_0000.xml')
 
 
 """JAVA設定的屬性如下：
