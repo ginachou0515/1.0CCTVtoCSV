@@ -13,22 +13,24 @@ import xml.etree.ElementTree as ET
 
 def download_xml(url):
     response = requests.get(url)
-    Result_Name = "1day_cctv_config_data.xml"
+    Result_Name = "1day_cctv_config_data_https.xml"
     with open(Result_Name, 'wb') as file:
         file.write(response.content)
+    print(f'下載1天全部設備：1day_cctv_config_data_https.xml')
 
 def url_xml_dict(url):
     '''讀取並解析線上xml
        url: xml網址
        return: XML轉換成Python的字典格式'''
     html = requests.get(url)
+    html.encoding = html.apparent_encoding ##內容解碼跟編碼不一致 1130607
     data = xmltodict.parse(html.text)
     return data
 
 if __name__ == '__main__':
-
-    URL = "http://210.241.131.244/xml/1day_cctv_config_data_https.xml"
-    # download_xml(URL)
+    # URL = "http://210.241.131.244/xml/1day_cctv_config_data_https.xml"
+    URL = "https://tisv.tcloud.freeway.gov.tw/xml/cloud_00/1day_cctv_config_data_https.xml"
+    download_xml(URL)
 
     data = url_xml_dict(URL)
     info = data["cctvinfo"]
@@ -53,6 +55,12 @@ if __name__ == '__main__':
             continue
         if "CCTV-T64" in stop["@eqId"]:#移除公總管理的設備
             print(f'不含台64：{stop["@eqId"]}')
+            continue
+        if "CCTV-T66" in stop["@eqId"]:#移除公總管理的設備
+            print(f'不含台66：{stop["@eqId"]}')
+            continue
+        if "CCTV-T68" in stop["@eqId"]:#移除公總管理的設備
+            print(f'不含台68：{stop["@eqId"]}')
             continue
         Info = ET.Element(
             'Info', {
